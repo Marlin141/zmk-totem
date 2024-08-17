@@ -74,6 +74,11 @@
             bindings = <&bt BT_NXT>;
             key-positions = <13 3>;
         };
+
+        TEMP_BT_CLEAR {
+            bindings = <&bt BT_CLR>;
+            key-positions = <3 13 24>;
+        };
     };
 
     keymap {
