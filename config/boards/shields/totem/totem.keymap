@@ -1,5 +1,6 @@
-
-
+/ {
+    keymap { compatible = "zmk,keymap"; };
+};
 
 //
 //                                                        ▀▀▀▀▀     ▀▀▀▀▀          ▀▀█▀▀
@@ -67,6 +68,11 @@
         delete {
             bindings = <&kp DELETE>;
             key-positions = <28 29>;
+        };
+
+        TEMP_BT {
+            bindings = <&bt BT_NXT>;
+            key-positions = <13 3>;
         };
     };
 
