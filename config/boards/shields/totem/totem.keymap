@@ -4,15 +4,12 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define Base        0
-#define Media       1
-#define Nav         2
-#define Mouse       3
-#define Sym         4
-#define Num         5
-#define Fun         6
-#define Button      7
-#define Game        8
-#define Gameplus    9
+#define Nav         1
+#define Sym         3
+#define Utill       4
+#define CAD         5
+#define Game        6
+#define Gameplus    7
 
 &mt {
     quick-tap-ms = <100>;
@@ -75,14 +72,14 @@
         };
     };
 
-    // tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
+// tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
 
-    SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
 SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 
-    // tap: dot | shift + tap: colon | ctrl + shift + tap: >
+// tap: dot | shift + tap: colon | ctrl + shift + tap: >
 
-    SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
 SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
     keymap {
