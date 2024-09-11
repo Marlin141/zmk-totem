@@ -4,29 +4,15 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define Base        0
-#define Nav         1
-#define Sym         3
-#define Utill       4
-#define CAD         5
-#define Game        6
-#define Gameplus    7
-
-
-// reuse basic mod-morph scheme
-#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
-    ZMK_MOD_MORPH(NAME, \
-        mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
-        bindings = <BINDING1>, <BINDING2>; \
-    )
-
-// tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
-
-// tap: dot | shift + tap: colon | ctrl + shift + tap: >
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
-SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
-
+#define Media       1
+#define Nav         2
+#define Mouse       3
+#define Sym         4
+#define Num         5
+#define Fun         6
+#define Button      7
+#define Game        8
+#define Gameplus    9
 
 &mt {
     quick-tap-ms = <100>;
@@ -89,16 +75,15 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
         };
     };
 
-
     keymap {
         compatible = "zmk,keymap";
 
         Base {
             label = "Base";
             bindings = <
-         &kp Q       &kp W       &kp F        &kp P          &kp B        &kp J        &kp L        &kp U        &kp Y       &kp SQT
+         &kp Q       &kp W       &kp F        &kp P          &kp B        &kp J        &kp L        &kp U        &kp Y       &kp SEMI
          &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHIFT T   &kp G        &kp M        &hm RSHFT N  &hm RCTRL E  &hm RALT I  &hm RGUI O
-&kp ESC  &kp Z       &kp X       &kp C        &kp D          &kp V        &kp K        &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp BSLH
+&kp ESC  &kp Z       &kp X       &kp C        &kp D          &kp V        &kp K        &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp SQT
                                  &lt 3 DEL    &kp BACKSPACE  &lt 2 TAB    &lt 2 ENTER  &lt 1 SPACE  &kp MINUS
             >;
         };
@@ -117,8 +102,8 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
             label = "Sym";
             bindings = <
         &kp EXCL   &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp MINUS  &kp EQUAL
-        &kp GRAVE  &trans  &trans    &trans      &trans         &trans     &trans         &trans        &trans     &trans
-&trans  &trans     &trans  &trans    &trans      &trans         &trans     &trans         &trans        &trans     &kp SLASH  &kp HOME
+        &kp GRAVE  &trans  &trans    &trans      &trans         &trans     &trans         &trans        &trans     &kp BSLH
+&trans  &trans     &trans  &trans    &trans      &trans         &trans     &trans         &trans        &trans     &trans     &trans
                            &trans    &trans      &trans         &trans     &trans         &trans
             >;
         };
