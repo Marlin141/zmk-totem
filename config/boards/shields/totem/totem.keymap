@@ -73,6 +73,11 @@
             bindings = <&kp LC(X)>;
             key-positions = <22 24>;
         };
+
+        CapsLock {
+            bindings = <&caps_word>;
+            key-positions = <13 16>;
+        };
     };
 
     keymap {
@@ -81,10 +86,10 @@
         Base {
             label = "Base";
             bindings = <
-         &kp Q       &kp W       &kp F        &kp P          &kp B        &kp J        &kp L        &kp U        &kp Y       &kp SEMI
-         &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHIFT T   &kp G        &kp M        &hm RSHFT N  &hm RCTRL E  &hm RALT I  &hm RGUI O
-&kp ESC  &kp Z       &kp X       &kp C        &kp D          &kp V        &kp K        &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp SQT
-                                 &lt 3 DEL    &kp BACKSPACE  &lt 2 TAB    &lt 2 ENTER  &lt 1 SPACE  &kp MINUS
+         &kp Q       &kp W       &kp F        &kp P            &kp B      &kp J    &kp L        &kp U        &kp Y       &kp SEMI
+         &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHIFT T     &kp G      &kp M    &hm RSHFT N  &hm RCTRL E  &hm RALT I  &hm RGUI O
+&kp ESC  &kp Z       &kp X       &kp C        &kp D            &kp V      &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp SQT
+                                 &lt 3 DEL    &lt 2 BACKSPACE  &kp TAB    &kp RET  &lt 1 SPACE  &kp MINUS
             >;
         };
 
@@ -94,7 +99,7 @@
         &trans  &kp N7        &kp N8        &kp N9        &kp LBRC                &kp RBRC               &kp PAGE_UP    &kp HOME  &trans    &trans
         &kp N0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp LEFT       &kp UP    &kp DOWN  &kp RIGHT
 &trans  &trans  &kp N1        &kp N2        &kp N3        &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp PAGE_DOWN  &kp END   &trans    &trans     &trans
-                              &kp N0        &trans        &trans                  &trans                 &trans         &trans
+                              &kp N0        &kp DOT       &trans                  &trans                 &trans         &trans
             >;
         };
 
@@ -102,8 +107,8 @@
             label = "Sym";
             bindings = <
         &kp EXCL   &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp MINUS  &kp EQUAL
-        &kp GRAVE  &trans  &trans    &trans      &trans         &trans     &trans         &trans        &trans     &kp BSLH
-&trans  &trans     &trans  &trans    &trans      &trans         &trans     &trans         &trans        &trans     &trans     &trans
+        &kp GRAVE  &trans  &kp LPAR  &kp RPAR    &trans         &trans     &trans         &trans        &trans     &kp BSLH
+&trans  &trans     &trans  &kp LBKT  &kp RBKT    &trans         &trans     &trans         &trans        &trans     &trans     &trans
                            &trans    &trans      &trans         &trans     &trans         &trans
             >;
         };
